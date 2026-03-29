@@ -8,6 +8,6 @@
   };
 
   environment.systemPackages = [
-    (pkgs.callPackage ./sddm-theme.nix {})
+    (pkgs.callPackage ./sddm-theme.nix { })
   ];
 }

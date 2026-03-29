@@ -2,8 +2,9 @@
 
 let
   colors = (import ../../themes/rose-pine.nix).theme;
-  fonts  = import ../../themes/fonts.nix;
-in {
+  fonts = import ../../themes/fonts.nix;
+in
+{
   # Hypridle — управляет таймаутами (сон, блокировка)
   services.hypridle = {
     enable = true;
@@ -44,7 +45,7 @@ in {
           path = "${../../assets/wallpapers/wallpaper.png}";
           blur_passes = 3;
           blur_size = 8;
-          color = "rgb(${builtins.replaceStrings ["#"] [""] colors.base})";
+          color = "rgb(${builtins.replaceStrings [ "#" ] [ "" ] colors.base})";
         }
       ];
 
@@ -55,9 +56,9 @@ in {
           dots_size = 0.2;
           dots_spacing = 0.2;
           dots_center = true;
-          outer_color = "rgb(${builtins.replaceStrings ["#"] [""] colors.iris})";
-          inner_color = "rgb(${builtins.replaceStrings ["#"] [""] colors.surface})";
-          font_color = "rgb(${builtins.replaceStrings ["#"] [""] colors.text})";
+          outer_color = "rgb(${builtins.replaceStrings [ "#" ] [ "" ] colors.iris})";
+          inner_color = "rgb(${builtins.replaceStrings [ "#" ] [ "" ] colors.surface})";
+          font_color = "rgb(${builtins.replaceStrings [ "#" ] [ "" ] colors.text})";
           fade_on_empty = false;
           placeholder_text = "<i>Password...</i>";
           hide_input = false;
@@ -71,7 +72,7 @@ in {
         # Время
         {
           text = "$TIME";
-          color = "rgb(${builtins.replaceStrings ["#"] [""] colors.text})";
+          color = "rgb(${builtins.replaceStrings [ "#" ] [ "" ] colors.text})";
           font_size = 120;
           font_family = fonts.sans;
           position = "0, 80";
@@ -81,7 +82,7 @@ in {
         # Приветствие
         {
           text = "Hi, $USER";
-          color = "rgb(${builtins.replaceStrings ["#"] [""] colors.subtle})";
+          color = "rgb(${builtins.replaceStrings [ "#" ] [ "" ] colors.subtle})";
           font_size = 25;
           font_family = fonts.sans;
           position = "0, 0";

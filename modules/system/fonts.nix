@@ -2,7 +2,8 @@
 
 let
   fonts = import ../../themes/fonts.nix;
-in {
+in
+{
   fonts = {
     enableDefaultPackages = true;
 
@@ -15,9 +16,9 @@ in {
 
     fontconfig.defaultFonts = {
       sansSerif = [ fonts.sans ];
-      serif     = [ fonts.serif ];
+      serif = [ fonts.serif ];
       monospace = [ fonts.mono ];
-      emoji     = [ fonts.emoji ];
+      emoji = [ fonts.emoji ];
     };
   };
 }

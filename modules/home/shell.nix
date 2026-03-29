@@ -2,7 +2,8 @@
 
 let
   colors = (import ../../themes/rose-pine.nix).theme;
-in {
+in
+{
   programs.fish = {
     enable = true;
 
@@ -13,18 +14,18 @@ in {
     shellAliases = {
       # Nix
       rebuild = "nh os switch ~/nixos";
-      update  = "nh flake update ~/nixos";
-      gc      = "nh clean all";
+      update = "nh flake update ~/nixos";
+      gc = "nh clean all";
 
       # Navigation
-      ".."  = "cd ..";
+      ".." = "cd ..";
       "..." = "cd ../..";
 
       # Utils
-      ls  = "ls --color=auto";
-      ll  = "ls -la --color=auto";
+      ls = "ls --color=auto";
+      ll = "ls -la --color=auto";
       cat = "bat";
-      rm  = "rm -i";
+      rm = "rm -i";
       doom = "~/.config/emacs/bin/doom";
     };
   };
@@ -37,35 +38,35 @@ in {
       format = "$directory$git_branch$git_status$nix_shell$cmd_duration$line_break$character";
 
       character = {
-        success_symbol = "[❯](bold #${builtins.replaceStrings ["#"] [""] colors.iris})";
-        error_symbol   = "[❯](bold #${builtins.replaceStrings ["#"] [""] colors.love})";
+        success_symbol = "[❯](bold #${builtins.replaceStrings [ "#" ] [ "" ] colors.iris})";
+        error_symbol = "[❯](bold #${builtins.replaceStrings [ "#" ] [ "" ] colors.love})";
       };
 
       directory = {
-        style            = "bold #${builtins.replaceStrings ["#"] [""] colors.foam}";
+        style = "bold #${builtins.replaceStrings [ "#" ] [ "" ] colors.foam}";
         truncation_length = 3;
         truncate_to_repo = true;
       };
 
       git_branch = {
         symbol = " ";
-        style  = "#${builtins.replaceStrings ["#"] [""] colors.pine}";
+        style = "#${builtins.replaceStrings [ "#" ] [ "" ] colors.pine}";
         format = "[$symbol$branch]($style) ";
       };
 
       git_status = {
-        style  = "#${builtins.replaceStrings ["#"] [""] colors.gold}";
+        style = "#${builtins.replaceStrings [ "#" ] [ "" ] colors.gold}";
         format = "([$all_status$ahead_behind]($style) )";
       };
 
       nix_shell = {
         symbol = " ";
-        style  = "#${builtins.replaceStrings ["#"] [""] colors.iris}";
+        style = "#${builtins.replaceStrings [ "#" ] [ "" ] colors.iris}";
         format = "[$symbol$state]($style) ";
       };
 
       cmd_duration = {
-        style  = "#${builtins.replaceStrings ["#"] [""] colors.muted}";
+        style = "#${builtins.replaceStrings [ "#" ] [ "" ] colors.muted}";
         format = "[ $duration]($style) ";
         min_time = 2000;
       };

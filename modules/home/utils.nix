@@ -3,8 +3,8 @@
 {
   home.packages = with pkgs; [
     waybar
-    grimblast     
-    wl-clipboard 
-    cliphist    
+    grimblast
+    wl-clipboard
+    cliphist
   ];
 }

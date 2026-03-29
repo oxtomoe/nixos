@@ -2,8 +2,9 @@
 
 let
   colors = (import ../../themes/rose-pine.nix).theme;
-  fonts  = import ../../themes/fonts.nix;
-in {
+  fonts = import ../../themes/fonts.nix;
+in
+{
   services.dunst = {
     enable = true;
     settings = {

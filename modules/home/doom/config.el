@@ -15,3 +15,12 @@
 
 ;; Org directory
 (setq org-directory "~/org/")
+
+(after! apheleia
+  (setf (alist-get 'eglot apheleia-formatters)
+        '(eglot-format-buffer))
+  (setq apheleia-formatter 'eglot))
+
+(setq treesit-extra-load-path
+  (list (car (file-expand-wildcards
+    "/nix/store/*-emacs-packages-deps/lib"))))

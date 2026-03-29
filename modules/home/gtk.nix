@@ -1,7 +1,8 @@
 { pkgs, ... }:
 let
   fonts = import ../../themes/fonts.nix;
-in {
+in
+{
   gtk = {
     enable = true;
     theme = {

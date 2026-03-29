@@ -1,4 +1,8 @@
-{ stdenvNoCC, fetchFromGitHub, qt5 }:
+{
+  stdenvNoCC,
+  fetchFromGitHub,
+  qt5,
+}:
 
 stdenvNoCC.mkDerivation rec {
   pname = "sddm-rose-pine-theme";

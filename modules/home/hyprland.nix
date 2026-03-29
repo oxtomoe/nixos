@@ -4,7 +4,8 @@
 let
   colors = (import ../../themes/rose-pine.nix).theme;
   wallpaper = ../../assets/wallpapers/wallpaper.png;
-in {
+in
+{
   wayland.windowManager.hyprland = {
     enable = true;
 
@@ -13,20 +14,12 @@ in {
       monitor = "HDMI-A-1,1920x1080@60,0x0,1";
       # ── Autostart ─────────────────────────────────────────────
       exec-once = [
-        "hyprpaper"
+        "swww-daemon"
+        "sleep 1 && swww img ${toString ../../assets/wallpapers/wallpaper.png}"
+        "sleep 2 && systemctl --user start waybar"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
       ];
-
-env = [
-  "XCURSOR_THEME,BreezeX-RosePine-Linux"
-  "XCURSOR_SIZE,24"
-  "HYPRCURSOR_SIZE,24"
-  "QT_QPA_PLATFORM,wayland"
-  "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
-  "ROC_ENABLE_PRE_VEGA,1"
-  "HSA_OVERRIDE_GFX_VERSION,9.0.0"
-];
 
       workspace = [
         "special:music, on-created-empty:uwsm app -- spotify"
@@ -35,44 +28,44 @@ env = [
       ];
 
       # ── Variables ─────────────────────────────────────────────
-      "$mod"      = "SUPER";
+      "$mod" = "SUPER";
       "$terminal" = "kitty";
-      "$browser"  = "brave";
-      "$editor"   = "emacs";
-      "$files"    = "kitty -e yazi";
+      "$browser" = "brave";
+      "$editor" = "emacs";
+      "$files" = "kitty -e yazi";
       "$launcher" = "rofi -show drun";
-      "$clip"     = "cliphist list | rofi -dmenu | cliphist decode | wl-copy";
+      "$clip" = "cliphist list | rofi -dmenu | cliphist decode | wl-copy";
 
       # ── General ───────────────────────────────────────────────
       general = {
-        gaps_in  = 4;
+        gaps_in = 4;
         gaps_out = 8;
         border_size = 1;
-        "col.active_border"   = "rgb(${builtins.replaceStrings ["#"] [""] colors.iris})";
-        "col.inactive_border" = "rgb(${builtins.replaceStrings ["#"] [""] colors.highlightMed})";
+        "col.active_border" = "rgb(${builtins.replaceStrings [ "#" ] [ "" ] colors.iris})";
+        "col.inactive_border" = "rgb(${builtins.replaceStrings [ "#" ] [ "" ] colors.highlightMed})";
         resize_on_border = true;
-        allow_tearing    = false;
-        layout           = "dwindle";
+        allow_tearing = false;
+        layout = "dwindle";
       };
 
       # ── Decoration ────────────────────────────────────────────
       decoration = {
-        rounding         = 8;
-        active_opacity   = 1.0;
+        rounding = 8;
+        active_opacity = 1.0;
         inactive_opacity = 0.95;
 
         blur = {
-          enabled   = true;
-          size      = 4;
-          passes    = 2;
-          vibrancy  = 0.2;
+          enabled = true;
+          size = 4;
+          passes = 2;
+          vibrancy = 0.2;
         };
 
         shadow = {
-          enabled      = true;
-          range        = 8;
+          enabled = true;
+          range = 8;
           render_power = 2;
-          color        = "rgba(0,0,0,0.4)";
+          color = "rgba(0,0,0,0.4)";
         };
       };
 
@@ -90,13 +83,13 @@ env = [
 
       # ── Layout ────────────────────────────────────────────────
       dwindle = {
-        pseudotile     = true;
+        pseudotile = true;
         preserve_split = true;
       };
 
       # ── Input ─────────────────────────────────────────────────
       input = {
-        kb_layout  = "us,ru";
+        kb_layout = "us,ru";
         kb_options = "grp:alt_shift_toggle";
         follow_mouse = 1;
         touchpad.natural_scroll = true;
