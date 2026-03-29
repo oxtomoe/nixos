@@ -1,0 +1,9 @@
+[2026-03-29 13:00:39.980] [info] Using configuration file /home/tomoe/.config/waybar/config
+[2026-03-29 13:00:39.981] [info] Unable to receive desktop appearance: GDBus.Error:org.freedesktop.DBus.Error.UnknownMethod: No such interface “org.freedesktop.portal.Settings” on object at path /org/freedesktop/portal/desktop
+[2026-03-29 13:00:39.981] [info] Using CSS file /home/tomoe/.config/waybar/style.css
+[2026-03-29 13:00:39.984] [info] Hyprland IPC starting
+[2026-03-29 13:00:39.985] [info] Loading persistent workspaces from Hyprland workspace rules
+[2026-03-29 13:00:39.993] [warning] No batteries.
+[2026-03-29 13:00:40.001] [info] Bar configured (width: 1920, height: 32) for output: HDMI-A-1
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Could not watch events for /sys/class/power_supply/hid-f4:73:35:18:4f:82-battery
